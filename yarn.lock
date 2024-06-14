@@ -1507,7 +1507,7 @@ hasown@^2.0.0:
   dependencies:
     function-bind "^1.1.2"
 
-html-to-text@^9.0.5:
+html-to-text@9.0.5:
   version "9.0.5"
   resolved "https://registry.yarnpkg.com/html-to-text/-/html-to-text-9.0.5.tgz#6149a0f618ae7a0db8085dca9bbf96d32bb8368d"
   integrity sha512-qY60FjREgVZL03vJU6IfMV4GDjGBIoOyvuFdpBDIX9yTlDw0TjxVBQp+P8NvpdIXNJvfWBTNul7fsAQJq2FNpg==
@@ -1899,7 +1899,7 @@ lru-cache@^6.0.0:
   dependencies:
     yallist "^4.0.0"
 
-luxon@^3.3.0:
+luxon@3.3.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/luxon/-/luxon-3.3.0.tgz#d73ab5b5d2b49a461c47cedbc7e73309b4805b48"
   integrity sha512-An0UCfG/rSiqtAIiBPO0Y9/zAnHUZxAMiCpTd5h2smgsj7GGmcenvrvww2cqNA8/4A5ZrD1gJpHN2mIHZQF+Mg==
@@ -1976,7 +1976,7 @@ natural-compare@^1.4.0:
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==
 
-newt-client-js@^3.3.2:
+newt-client-js@3.3.2:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/newt-client-js/-/newt-client-js-3.3.2.tgz#9fdc14531aaaa4354a31b6544ae9bccba76c0973"
   integrity sha512-reFuG9WreOGRC0o2ccl8OenPPvChGQUtCtrAY3gkmxd5mJe6GQoFDEoRTI+DlONomaDqxZkWImvh18Ewi6JdAg==
