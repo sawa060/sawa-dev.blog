@@ -10,8 +10,9 @@
     "dev": "next dev -p 8060",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "prettier": "prettier './**/*.{js,jsx,ts,tsx,json,css}' --write --ignore-path .gitignore"
+    "lint:eslint": "eslint . --ext .js,.ts,.tsx",
+    "lint:eslint:fix": "eslint . --ext .js,.ts,.tsx,.css --fix && prettier \"**/*.{ts,tsx,js}\" --write",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "html-to-text": "9.0.5",
