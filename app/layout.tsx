@@ -6,7 +6,7 @@ import styles from '@/styles/Layout.module.css';
 import type {Metadata} from 'next';
 
 export const metadata: Metadata = {
-  title: 'Next.js Blog Example with Newt',
+  title: 'sawa-dev.blog',
   description: 'NewtとNext.jsを利用したブログです',
 };
 
