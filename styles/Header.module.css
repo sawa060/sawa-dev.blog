@@ -63,9 +63,8 @@
 }
 
 .Link {
-  border-right: 1px solid #e5e5e5;
   padding: 0 8px 0 0;
-  margin: 0 12px 0 0;
+  line-height: 1;
 }
 
 .Link > a {

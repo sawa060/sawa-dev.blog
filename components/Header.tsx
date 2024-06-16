@@ -1,7 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import {Suspense} from 'react';
+import {FaGithub, FaXTwitter} from 'react-icons/fa6';
 import {SearchField, SearchFieldFallback} from '@/components/SearchField';
+import {GITHUB_URL, TWITTER_URL} from '@/helpers/const';
 import {getApp} from '@/lib/newt';
 import styles from '@/styles/Header.module.css';
 
@@ -23,12 +25,13 @@ export async function Header() {
           <div className={styles.Title_Text}>{app.name || app.uid}</div>
         </Link>
         <div className={styles.Link}>
-          <a
-            href="https://github.com/Newt-Inc/newt-starter-nextjs-blog"
-            rel="noreferrer noopener"
-            target="_blank"
-          >
-            GitHub
+          <a href={GITHUB_URL} rel="noreferrer noopener" target="_blank">
+            <FaGithub size={20} />
+          </a>
+        </div>
+        <div className={styles.Link}>
+          <a href={TWITTER_URL} rel="noreferrer noopener" target="_blank">
+            <FaXTwitter size={20} />
           </a>
         </div>
         <Suspense fallback={<SearchFieldFallback />}>

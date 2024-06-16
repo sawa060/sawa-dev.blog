@@ -2688,6 +2688,11 @@ react-dom@18.2.0:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
 
+react-icons@5.2.1:
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-5.2.1.tgz#28c2040917b2a2eda639b0f797bff1888e018e4a"
+  integrity sha512-zdbW5GstTzXaVKvGSyTaBalt7HSfuK5ovrzlpyiWHAFXndXTdd/1hdDHI4xBM1Mn7YriT6aqESucFl9kEXzrdw==
+
 react-is@^16.13.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
@@ -3084,14 +3089,14 @@ stylelint-config-recommended@^14.0.0:
   resolved "https://registry.yarnpkg.com/stylelint-config-recommended/-/stylelint-config-recommended-14.0.0.tgz#b395c7014838d2aaca1755eebd914d0bb5274994"
   integrity sha512-jSkx290CglS8StmrLp2TxAppIajzIBZKYm3IxT89Kg6fGlxbPiTiyH9PS5YUuVAFwaJLl1ikiXX0QWjI0jmgZQ==
 
-stylelint-config-standard@^36.0.0:
+stylelint-config-standard@36.0.0:
   version "36.0.0"
   resolved "https://registry.yarnpkg.com/stylelint-config-standard/-/stylelint-config-standard-36.0.0.tgz#6704c044d611edc12692d4a5e37b039a441604d4"
   integrity sha512-3Kjyq4d62bYFp/Aq8PMKDwlgUyPU4nacXsjDLWJdNPRUgpuxALu1KnlAHIj36cdtxViVhXexZij65yM0uNIHug==
   dependencies:
     stylelint-config-recommended "^14.0.0"
 
-stylelint@^16.6.1:
+stylelint@16.6.1:
   version "16.6.1"
   resolved "https://registry.yarnpkg.com/stylelint/-/stylelint-16.6.1.tgz#84735aca2bb5cde535572b7a9b878d2ec983a570"
   integrity sha512-yNgz2PqWLkhH2hw6X9AweV9YvoafbAD5ZsFdKN9BvSDVwGvPh+AUIrn7lYwy1S7IHmtFin75LLfX1m0D2tHu8Q==
