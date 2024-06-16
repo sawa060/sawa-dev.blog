@@ -1,5 +1,5 @@
 .Container {
-  padding: 40px 24px;
+  padding: 36px 24px;
 }
 
 .Container_Inner {
@@ -9,7 +9,7 @@
 
 @media (width >= 600px) {
   .Container {
-    padding: 60px;
+    padding: 36px 60px;
   }
 
   .Container_Inner {
