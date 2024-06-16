@@ -73,55 +73,6 @@
   border-radius: 4px;
 }
 
-.Article_Author {
-  display: flex;
-  align-items: center;
-}
-
-.Article_Author > img {
-  width: 32px;
-  height: 32px;
-  border-radius: 16px;
-  margin: 0 12px 0 0;
-  flex-shrink: 0;
-}
-
-.Article_Author img {
-  width: 32px;
-  height: 32px;
-  object-fit: cover;
-}
-
-.Article_AuthorEmpty {
-  width: 32px;
-  height: 32px;
-  background: #f8f8f8;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 16px;
-  margin: 0 12px 0 0;
-  flex-shrink: 0;
-}
-
-.Article_AuthorData {
-  flex: 1;
-}
-
-.Article_AuthorData span {
-  font-size: 1.2rem;
-  font-weight: 700;
-  display: block;
-  line-height: 1.5;
-}
-
-.Article_AuthorData time {
-  font-size: 1.2rem;
-  display: block;
-  color: #666;
-  line-height: 1.5;
-}
-
 @media (width >= 600px) {
   .Article {
     display: flex;

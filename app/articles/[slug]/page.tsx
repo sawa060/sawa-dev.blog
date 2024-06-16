@@ -70,48 +70,6 @@ export default async function Page({params}: Props) {
               </li>
             ))}
           </ul>
-          <div className={styles.Article_Row}>
-            <div className={styles.Article_Author}>
-              <a href="#" className={styles.Article_Avatar} aria-label={article.author.fullName}>
-                {article.author.profileImage ? (
-                  <Image src={article.author.profileImage.src} alt="" width="36" height="36" />
-                ) : (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20px"
-                    height="20px"
-                    viewBox="0 0 24 24"
-                    fill="#CCCCCC"
-                  >
-                    <path d="M0 0h24v24H0V0z" fill="none" />
-                    <path d="M12 6c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2m0 10c2.7 0 5.8 1.29 6 2H6c.23-.72 3.31-2 6-2m0-12C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 10c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                  </svg>
-                )}
-              </a>
-              <div className={styles.Article_AuthorData}>
-                <Link
-                  className={styles.Article_AuthorName}
-                  href={`/authors/${article.author.slug}`}
-                >
-                  {article.author.fullName}
-                </Link>
-                <time dateTime={formatDate(article._sys.createdAt)} className={styles.Article_Date}>
-                  {formatDate(article._sys.createdAt)}
-                </time>
-              </div>
-            </div>
-            <div className={styles.Article_Share}>
-              <p className={styles.Article_ShareLabel}>Share this post</p>
-              <ul className={styles.Article_ShareList}>
-                <li>
-                  <TwitterShareButton title={article.title} />
-                </li>
-                <li>
-                  <FacebookShareButton />
-                </li>
-              </ul>
-            </div>
-          </div>
         </div>
         <div className={styles.Article_Body} dangerouslySetInnerHTML={{__html: article.body}}></div>
         <div className={styles.SnsShare}>
@@ -125,33 +83,6 @@ export default async function Page({params}: Props) {
             </li>
           </ul>
         </div>
-        <aside className={styles.Author}>
-          <a href="#" className={styles.Author_Avatar} aria-label={article.author.fullName}>
-            {article.author.profileImage ? (
-              <Image src={article.author.profileImage.src} alt="" width="48" height="48" />
-            ) : (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="28px"
-                height="28px"
-                viewBox="0 0 24 24"
-                fill="#CCCCCC"
-              >
-                <path d="M0 0h24v24H0V0z" fill="none" />
-                <path d="M12 6c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2m0 10c2.7 0 5.8 1.29 6 2H6c.23-.72 3.31-2 6-2m0-12C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 10c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-              </svg>
-            )}
-          </a>
-          <div className={styles.Author_Text}>
-            <Link className={styles.Article_AuthorName} href={`/authors/${article.author.slug}`}>
-              {article.author.fullName}
-            </Link>
-            <div
-              className={styles.Author_Description}
-              dangerouslySetInnerHTML={{__html: article.author.biography}}
-            ></div>
-          </div>
-        </aside>
         <nav className={styles.Links}>
           {prevArticle && (
             <Link className={styles.Links_Previous} href={`/articles/${prevArticle.slug}`}>

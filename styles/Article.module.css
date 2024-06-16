@@ -69,11 +69,6 @@
   align-items: center;
 }
 
-.Article_Author {
-  display: flex;
-  align-items: center;
-}
-
 .Article_Avatar {
   width: 36px;
   height: 36px;
@@ -91,23 +86,6 @@
   width: 36px;
   height: 36px;
   object-fit: cover;
-}
-
-.Article_AuthorData {
-  flex: 1;
-}
-
-.Article_AuthorName {
-  font-weight: bold;
-  display: block;
-  line-height: 1.5;
-  color: #333;
-  text-decoration: none;
-  font-size: 1.4rem;
-}
-
-.Article_AuthorName:hover {
-  text-decoration: underline;
 }
 
 .Article_Date {
@@ -343,60 +321,6 @@
 
 .SnsShare_List > li > button:hover > svg {
   fill: #888;
-}
-
-.Author {
-  border: 1px solid #e5e5e5;
-  border-radius: 4px;
-  padding: 24px;
-  display: flex;
-  align-items: center;
-  margin: 0 0 48px;
-}
-
-.Author_Avatar {
-  width: 48px;
-  height: 48px;
-  border-radius: 24px;
-  overflow: hidden;
-  margin: 0 16px 0 0;
-  flex-shrink: 0;
-  background: rgb(0 0 0 / 5%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.Author_Avatar img {
-  width: 48px;
-  height: 48px;
-  object-fit: cover;
-}
-
-.Author_Name {
-  margin: 0 0 4px;
-  padding: 0;
-  font-weight: bold;
-  line-height: 1.5;
-  font-size: 1.6rem;
-  color: #333;
-  text-decoration: none;
-}
-
-.Author_Name:hover {
-  text-decoration: underline;
-}
-
-.Author_Description {
-  margin: 0;
-  padding: 0;
-  line-height: 1.5;
-  font-size: 1.2rem;
-}
-
-.Author_Description p {
-  margin: 0;
-  padding: 0;
 }
 
 .Links {
