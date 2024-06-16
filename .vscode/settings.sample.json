@@ -1,0 +1,13 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "javascript.validate.enable": false,
+  "javascript.format.enable": true,
+  "eslint.format.enable": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "[prisma]": {"editor.defaultFormatter": "Prisma.prisma"},
+  "cSpell.words": ["Chakra"]
+}

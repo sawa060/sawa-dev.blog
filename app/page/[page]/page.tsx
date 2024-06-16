@@ -1,41 +1,42 @@
-import { ArticleCard } from '@/components/ArticleCard'
-import { Cover } from '@/components/Cover'
-import { Pagination } from '@/components/Pagination'
-import { Side } from '@/components/Side'
-import { getApp, getArticles } from '@/lib/newt'
-import styles from '@/styles/ArticleList.module.css'
+import {ArticleCard} from '@/components/ArticleCard';
+import {Cover} from '@/components/Cover';
+import {Pagination} from '@/components/Pagination';
+import {Side} from '@/components/Side';
+import {PAGE_LIMIT} from '@/helpers/const';
+import {getApp, getArticles} from '@/lib/newt';
+import styles from '@/styles/ArticleList.module.css';
 
 type Props = {
   params: {
-    page: string
-  }
-}
+    page: string;
+  };
+};
 
 export async function generateStaticParams() {
-  const limit = Number(process.env.NEXT_PUBLIC_PAGE_LIMIT) || 10
+  const limit = PAGE_LIMIT;
 
-  const { total } = await getArticles()
-  const maxPage = Math.ceil(total / limit)
-  const pages = Array.from({ length: maxPage }, (_, index) => index + 1)
+  const {total} = await getArticles();
+  const maxPage = Math.ceil(total / limit);
+  const pages = Array.from({length: maxPage}, (_, index) => index + 1);
 
   return pages.map((page) => ({
     page: page.toString(),
-  }))
+  }));
 }
-export const dynamicParams = false
+export const dynamicParams = false;
 
-export default async function Page({ params }: Props) {
-  const { page: _page } = params
-  const page = Number(_page) || 1
+export default async function Page({params}: Props) {
+  const {page: _page} = params;
+  const page = Number(_page) || 1;
 
-  const app = await getApp()
-  const headingText = 'Recent Articles'
+  const app = await getApp();
+  const headingText = 'Recent Articles';
 
-  const limit = Number(process.env.NEXT_PUBLIC_PAGE_LIMIT) || 10
-  const { articles, total } = await getArticles({
+  const limit = PAGE_LIMIT;
+  const {articles, total} = await getArticles({
     limit,
     skip: limit * (page - 1),
-  })
+  });
 
   return (
     <>
@@ -55,5 +56,5 @@ export default async function Page({ params }: Props) {
         </div>
       </div>
     </>
-  )
+  );
 }

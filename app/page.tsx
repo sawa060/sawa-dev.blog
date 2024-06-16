@@ -1,16 +1,17 @@
-import { ArticleCard } from '@/components/ArticleCard'
-import { Cover } from '@/components/Cover'
-import { Pagination } from '@/components/Pagination'
-import { Side } from '@/components/Side'
-import { getApp, getArticles } from '@/lib/newt'
-import styles from '@/styles/ArticleList.module.css'
+import {ArticleCard} from '@/components/ArticleCard';
+import {Cover} from '@/components/Cover';
+import {Pagination} from '@/components/Pagination';
+import {Side} from '@/components/Side';
+import {PAGE_LIMIT} from '@/helpers/const';
+import {getApp, getArticles} from '@/lib/newt';
+import styles from '@/styles/ArticleList.module.css';
 
 export default async function Page() {
-  const app = await getApp()
-  const { articles, total } = await getArticles({
-    limit: Number(process.env.NEXT_PUBLIC_PAGE_LIMIT) || 10,
-  })
-  const headingText = 'Recent Articles'
+  const app = await getApp();
+  const {articles, total} = await getArticles({
+    limit: PAGE_LIMIT,
+  });
+  const headingText = 'Recent Articles';
 
   return (
     <>
@@ -30,5 +31,5 @@ export default async function Page() {
         </div>
       </div>
     </>
-  )
+  );
 }

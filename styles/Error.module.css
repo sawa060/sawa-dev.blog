@@ -7,11 +7,13 @@
   align-items: center;
   justify-content: center;
 }
+
 .Error_Emoji {
   font-size: 4rem;
   line-height: 1;
-  margin: 0 0 16px 0;
+  margin: 0 0 16px;
 }
+
 .Error_Link {
   font-size: 1.4rem;
 }

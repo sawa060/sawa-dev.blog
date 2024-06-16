@@ -1,42 +1,37 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import { notFound } from 'next/navigation'
-import { htmlToText } from 'html-to-text'
-import { FacebookShareButton } from '@/components/FacebookShareButton'
-import { TwitterShareButton } from '@/components/TwitterShareButton'
-import { formatDate } from '@/lib/date'
-import {
-  getArticles,
-  getArticle,
-  getPreviousArticle,
-  getNextArticle,
-} from '@/lib/newt'
-import styles from '@/styles/Article.module.css'
+import Image from 'next/image';
+import Link from 'next/link';
+import {notFound} from 'next/navigation';
+import {htmlToText} from 'html-to-text';
+import {FacebookShareButton} from '@/components/FacebookShareButton';
+import {TwitterShareButton} from '@/components/TwitterShareButton';
+import {formatDate} from '@/lib/date';
+import {getArticles, getArticle, getPreviousArticle, getNextArticle} from '@/lib/newt';
+import styles from '@/styles/Article.module.css';
 
 type Props = {
   params: {
-    slug: string
-  }
-}
+    slug: string;
+  };
+};
 
 export async function generateStaticParams() {
-  const { articles } = await getArticles()
+  const {articles} = await getArticles();
   return articles.map((article) => ({
     slug: article.slug,
-  }))
+  }));
 }
-export const dynamicParams = false
+export const dynamicParams = false;
 
-export async function generateMetadata({ params }: Props) {
-  const { slug } = params
-  const article = await getArticle(slug)
+export async function generateMetadata({params}: Props) {
+  const {slug} = params;
+  const article = await getArticle(slug);
 
-  const title = article?.meta?.title || article?.title
+  const title = article?.meta?.title || article?.title;
   const bodyDescription = htmlToText(article?.body || '', {
-    selectors: [{ selector: 'img', format: 'skip' }],
-  }).slice(0, 200)
-  const description = article?.meta?.description || bodyDescription
-  const ogImage = article?.meta?.ogImage?.src
+    selectors: [{selector: 'img', format: 'skip'}],
+  }).slice(0, 200);
+  const description = article?.meta?.description || bodyDescription;
+  const ogImage = article?.meta?.ogImage?.src;
 
   return {
     title,
@@ -47,29 +42,24 @@ export async function generateMetadata({ params }: Props) {
       description,
       images: ogImage,
     },
-  }
+  };
 }
 
-export default async function Page({ params }: Props) {
-  const { slug } = params
-  const article = await getArticle(slug)
+export default async function Page({params}: Props) {
+  const {slug} = params;
+  const article = await getArticle(slug);
   if (!article) {
-    notFound()
+    notFound();
   }
 
-  const prevArticle = await getPreviousArticle(article)
-  const nextArticle = await getNextArticle(article)
+  const prevArticle = await getPreviousArticle(article);
+  const nextArticle = await getNextArticle(article);
 
   return (
     <main className={styles.Container}>
       <article className={styles.Article}>
         <div className={styles.Article_Cover}>
-          <Image
-            src={article.coverImage.src}
-            alt=""
-            width="1000"
-            height="667"
-          />
+          <Image src={article.coverImage.src} alt="" width="1000" height="667" />
         </div>
         <div className={styles.Article_Header}>
           <h1 className={styles.Article_Title}>{article.title}</h1>
@@ -82,18 +72,9 @@ export default async function Page({ params }: Props) {
           </ul>
           <div className={styles.Article_Row}>
             <div className={styles.Article_Author}>
-              <a
-                href="#"
-                className={styles.Article_Avatar}
-                aria-label={article.author.fullName}
-              >
+              <a href="#" className={styles.Article_Avatar} aria-label={article.author.fullName}>
                 {article.author.profileImage ? (
-                  <Image
-                    src={article.author.profileImage.src}
-                    alt=""
-                    width="36"
-                    height="36"
-                  />
+                  <Image src={article.author.profileImage.src} alt="" width="36" height="36" />
                 ) : (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -114,10 +95,7 @@ export default async function Page({ params }: Props) {
                 >
                   {article.author.fullName}
                 </Link>
-                <time
-                  dateTime={formatDate(article._sys.createdAt)}
-                  className={styles.Article_Date}
-                >
+                <time dateTime={formatDate(article._sys.createdAt)} className={styles.Article_Date}>
                   {formatDate(article._sys.createdAt)}
                 </time>
               </div>
@@ -135,10 +113,7 @@ export default async function Page({ params }: Props) {
             </div>
           </div>
         </div>
-        <div
-          className={styles.Article_Body}
-          dangerouslySetInnerHTML={{ __html: article.body }}
-        ></div>
+        <div className={styles.Article_Body} dangerouslySetInnerHTML={{__html: article.body}}></div>
         <div className={styles.SnsShare}>
           <p className={styles.SnsShare_Label}>Share this post</p>
           <ul className={styles.SnsShare_List}>
@@ -151,18 +126,9 @@ export default async function Page({ params }: Props) {
           </ul>
         </div>
         <aside className={styles.Author}>
-          <a
-            href="#"
-            className={styles.Author_Avatar}
-            aria-label={article.author.fullName}
-          >
+          <a href="#" className={styles.Author_Avatar} aria-label={article.author.fullName}>
             {article.author.profileImage ? (
-              <Image
-                src={article.author.profileImage.src}
-                alt=""
-                width="48"
-                height="48"
-              />
+              <Image src={article.author.profileImage.src} alt="" width="48" height="48" />
             ) : (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -177,24 +143,18 @@ export default async function Page({ params }: Props) {
             )}
           </a>
           <div className={styles.Author_Text}>
-            <Link
-              className={styles.Article_AuthorName}
-              href={`/authors/${article.author.slug}`}
-            >
+            <Link className={styles.Article_AuthorName} href={`/authors/${article.author.slug}`}>
               {article.author.fullName}
             </Link>
             <div
               className={styles.Author_Description}
-              dangerouslySetInnerHTML={{ __html: article.author.biography }}
+              dangerouslySetInnerHTML={{__html: article.author.biography}}
             ></div>
           </div>
         </aside>
         <nav className={styles.Links}>
           {prevArticle && (
-            <Link
-              className={styles.Links_Previous}
-              href={`/articles/${prevArticle.slug}`}
-            >
+            <Link className={styles.Links_Previous} href={`/articles/${prevArticle.slug}`}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24px"
@@ -209,10 +169,7 @@ export default async function Page({ params }: Props) {
             </Link>
           )}
           {nextArticle && (
-            <Link
-              className={styles.Links_Next}
-              href={`/articles/${nextArticle.slug}`}
-            >
+            <Link className={styles.Links_Next} href={`/articles/${nextArticle.slug}`}>
               Next post
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -234,5 +191,5 @@ export default async function Page({ params }: Props) {
         </nav>
       </article>
     </main>
-  )
+  );
 }

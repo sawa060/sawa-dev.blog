@@ -1,12 +1,12 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import { Suspense } from 'react'
-import { SearchField, SearchFieldFallback } from '@/components/SearchField'
-import { getApp } from '@/lib/newt'
-import styles from '@/styles/Header.module.css'
+import Image from 'next/image';
+import Link from 'next/link';
+import {Suspense} from 'react';
+import {SearchField, SearchFieldFallback} from '@/components/SearchField';
+import {getApp} from '@/lib/newt';
+import styles from '@/styles/Header.module.css';
 
 export async function Header() {
-  const app = await getApp()
+  const app = await getApp();
 
   return (
     <header className={styles.Header}>
@@ -36,5 +36,5 @@ export async function Header() {
         </Suspense>
       </div>
     </header>
-  )
+  );
 }

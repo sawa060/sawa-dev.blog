@@ -1,21 +1,16 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import { useMemo } from 'react'
-import { formatDate } from '@/lib/date'
-import styles from '@/styles/ArticleCard.module.css'
-import type { Article } from '@/types/article'
+import Image from 'next/image';
+import Link from 'next/link';
+import {useMemo} from 'react';
+import {formatDate} from '@/lib/date';
+import styles from '@/styles/ArticleCard.module.css';
+import type {Article} from '@/types/article';
 
-export function ArticleCard({ article }: { article: Article }) {
+export function ArticleCard({article}: {article: Article}) {
   return (
     <Link className={styles.Article} href={`/articles/${article.slug}`}>
       <div className={styles.Article_Eyecatch}>
         {article.coverImage ? (
-          <Image
-            src={article.coverImage.src}
-            alt=""
-            width="1000"
-            height="667"
-          />
+          <Image src={article.coverImage.src} alt="" width="1000" height="667" />
         ) : (
           <div className={styles.Article_EyecatchEmpty}>
             <svg
@@ -40,12 +35,7 @@ export function ArticleCard({ article }: { article: Article }) {
         </ul>
         <div className={styles.Article_Author}>
           {article.author.profileImage ? (
-            <Image
-              src={article.author.profileImage.src}
-              alt=""
-              width="32"
-              height="32"
-            />
+            <Image src={article.author.profileImage.src} alt="" width="32" height="32" />
           ) : (
             <div className={styles.Article_AuthorEmpty}>
               <svg
@@ -69,5 +59,5 @@ export function ArticleCard({ article }: { article: Article }) {
         </div>
       </div>
     </Link>
-  )
+  );
 }

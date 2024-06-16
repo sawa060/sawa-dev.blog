@@ -1,12 +1,12 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import { getArchives, getAuthors, getTags } from '@/lib/newt'
-import styles from '@/styles/Side.module.css'
+import Image from 'next/image';
+import Link from 'next/link';
+import {getArchives, getAuthors, getTags} from '@/lib/newt';
+import styles from '@/styles/Side.module.css';
 
 export async function Side() {
-  const tags = await getTags()
-  const archives = await getArchives()
-  const authors = await getAuthors()
+  const tags = await getTags();
+  const archives = await getArchives();
+  const authors = await getAuthors();
 
   return (
     <aside className={styles.Side}>
@@ -76,10 +76,7 @@ export async function Side() {
         <ul className={styles.Authors}>
           {authors.map((author) => (
             <li key={author._id}>
-              <Link
-                href={`/authors/${author.slug}`}
-                aria-label={author.fullName}
-              >
+              <Link href={`/authors/${author.slug}`} aria-label={author.fullName}>
                 {author.profileImage ? (
                   <Image
                     src={author.profileImage.src}
@@ -107,5 +104,5 @@ export async function Side() {
         </ul>
       </div>
     </aside>
-  )
+  );
 }

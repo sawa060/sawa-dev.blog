@@ -1,10 +1,10 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import { getApp } from '@/lib/newt'
-import styles from '@/styles/Footer.module.css'
+import Image from 'next/image';
+import Link from 'next/link';
+import {getApp} from '@/lib/newt';
+import styles from '@/styles/Footer.module.css';
 
 export async function Footer() {
-  const app = await getApp()
+  const app = await getApp();
 
   return (
     <footer className={styles.Footer}>
@@ -31,5 +31,5 @@ export async function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

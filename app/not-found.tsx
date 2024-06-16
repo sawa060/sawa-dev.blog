@@ -1,5 +1,5 @@
-import Link from 'next/link'
-import styles from '@/styles/Error.module.css'
+import Link from 'next/link';
+import styles from '@/styles/Error.module.css';
 
 export default function NotFound() {
   return (
@@ -10,5 +10,5 @@ export default function NotFound() {
         Back to the home page
       </Link>
     </div>
-  )
+  );
 }

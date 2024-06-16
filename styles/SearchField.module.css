@@ -2,6 +2,7 @@
   display: flex;
   flex-shrink: 0;
 }
+
 .Search_Input input {
   font-size: 1.6rem;
   appearance: none;
@@ -15,10 +16,12 @@
   top: 0;
   z-index: -1;
 }
+
 .Search_Input input:focus {
   opacity: 1;
   z-index: 1;
 }
+
 .Search_Button {
   height: 34px;
   width: 34px;
@@ -30,13 +33,16 @@
   position: relative;
   z-index: 0;
 }
+
 .Search_Button:hover {
   background: #f0f0f0;
 }
+
 .Search_Button:active {
   background: none;
   transition: none;
 }
+
 .Search_Button > svg {
   position: absolute;
   left: 10px;
