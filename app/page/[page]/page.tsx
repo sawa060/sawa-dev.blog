@@ -1,9 +1,8 @@
 import {ArticleCard} from '@/components/ArticleCard';
-import {Cover} from '@/components/Cover';
 import {Pagination} from '@/components/Pagination';
 import {Side} from '@/components/Side';
 import {PAGE_LIMIT} from '@/helpers/const';
-import {getApp, getArticles} from '@/lib/newt';
+import {getArticles} from '@/lib/newt';
 import styles from '@/styles/ArticleList.module.css';
 
 type Props = {
@@ -29,7 +28,6 @@ export default async function Page({params}: Props) {
   const {page: _page} = params;
   const page = Number(_page) || 1;
 
-  const app = await getApp();
   const headingText = 'Recent Articles';
 
   const limit = PAGE_LIMIT;
@@ -40,7 +38,6 @@ export default async function Page({params}: Props) {
 
   return (
     <>
-      {app.cover?.value && <Cover />}
       <div className={styles.Container}>
         <div className={styles.Container_Inner}>
           <main className={styles.Articles}>
