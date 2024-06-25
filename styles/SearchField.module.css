@@ -34,10 +34,6 @@
   z-index: 0;
 }
 
-.Search_Button:hover {
-  background: #f0f0f0;
-}
-
 .Search_Button:active {
   background: none;
   transition: none;
