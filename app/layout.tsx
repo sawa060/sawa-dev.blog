@@ -1,3 +1,4 @@
+import {GoogleAnalytics} from '@next/third-parties/google';
 import {Footer} from '@/components/Footer';
 import {Header} from '@/components/Header';
 import '@/styles/globals.css';
@@ -19,6 +20,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
           <Footer />
         </div>
       </body>
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID ?? ''} />
     </html>
   );
 }

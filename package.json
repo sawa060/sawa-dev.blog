@@ -17,6 +17,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@next/third-parties": "14.2.4",
     "html-to-text": "9.0.5",
     "luxon": "3.3.0",
     "newt-client-js": "3.3.2",
