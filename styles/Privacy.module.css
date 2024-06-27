@@ -1,0 +1,36 @@
+.Container {
+  padding: 36px 24px;
+}
+
+.Container_Inner {
+  display: block;
+  margin: 0 auto;
+}
+
+@media (width >= 600px) {
+  .Container {
+    padding: 36px 60px;
+  }
+
+  .Container_Inner {
+    max-width: 980px;
+  }
+}
+
+@media (width >= 960px) {
+  .Container_Inner {
+    display: flex;
+  }
+}
+
+.Text {
+  font-size: 1.6rem;
+  color: #333;
+}
+
+.SubTitle {
+  color: #fff;
+  background-color: #333;
+  font-weight: 500;
+  padding: 4px 14px;
+}
