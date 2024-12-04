@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import {notFound} from 'next/navigation';
 import {htmlToText} from 'html-to-text';
@@ -58,11 +57,9 @@ export default async function Page({params}: Props) {
   return (
     <main className={styles.Container}>
       <article className={styles.Article}>
-        <div className={styles.Article_Cover}>
-          <Image src={article.coverImage.src} alt="" width="1000" height="667" />
-        </div>
         <div className={styles.Article_Header}>
           <h1 className={styles.Article_Title}>{article.title}</h1>
+          <p>{formatDate(article._sys.createdAt)}</p>
           <ul className={styles.Article_Tags}>
             {(article.tags || []).map((tag) => (
               <li key={tag._id}>
